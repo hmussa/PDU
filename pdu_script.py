@@ -2,7 +2,6 @@
 
 top_of_rack_switch_name = 'r07r13-tors.sjc23.lint'
 top_of_rack_switch_interface = 'Gi1/0/35'
-# This is an actual change
 
 #find_this_IP = '00c0.b7c8.8295'
 location_of_rack = 'R07R13'
