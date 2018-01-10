@@ -3,6 +3,10 @@
 top_of_rack_switch_name = 'r07r13-tors.sjc23.lint'
 top_of_rack_switch_interface = 'Gi1/0/35'
 
+
+
+
+
 #find_this_IP = '00c0.b7c8.8295'
 location_of_rack = 'R07R13'
 Which_PDU = 'PDU1'
@@ -24,9 +28,12 @@ import csv_file
 Intended_IP = csv_file.get_intended_IP_add(location_of_rack, Which_PDU)
 print ("The intended IP is " + Intended_IP)
 
-import API_request
-Infoblox = API_request.Assign_on_infoblox(IP_address, mac_address)
-print ("The output for Infoblox " + Infoblox)
+from apceditinfoblox import editHostIPv4AddrForDHCPFromIP
+status = editHostIPv4AddrForDHCPFromIP (‘infoblox.lint’, ‘username’, ‘password’, IP_address, mac_address)
+if status:
+  print (“Success!”)
+else:
+  print (“Fail….”)   
 
 import check_apc_type
 Check_model = check_apc_type.checking_pw_model(IP_address)
