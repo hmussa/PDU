@@ -1,0 +1,4 @@
+BOOT= apc_hw05_bootmon_108.bin
+AOS = apc_hw05_aos_646.bin
+APP = apc_hw05_rpdu2g_646.bin
+; This file is auto-generated, do not edit  ;
